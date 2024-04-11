@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Index</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateCommentsInput() {
+            const commentsInput = document.getElementById('commentNumber');
+            const errorMessage = document.getElementById('commentsErrorMessage');
+
+            if (commentsInput.value < 0) {
+                errorMessage.textContent = 'Invalid input. Please enter a positive number.';
+            } else {
+                errorMessage.textContent = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Comment Index Page</h1>
+    <form action="process_comments.php" method="post">
+        <label for="commentNumber">Enter number of Comments:</label>
+        <input type="number" id="commentNumber" name="commentNumber" min="0" oninput="validateCommentsInput()" required>
+        <span id="commentsErrorMessage" style="color: red;"></span>
+
+        <br>
+
+        <label for="videoId">Enter Youtube Video ID tag:</label>
+        <input type="text" id="videoId" name="videoId" required>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
