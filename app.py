@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import requests
 from textblob import TextBlob
 import statistics
-from prometheus_flask_exporter import PrometheusMetrics  # Import PrometheusMetrics
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
 metrics = PrometheusMetrics(app)  # Create PrometheusMetrics instance
