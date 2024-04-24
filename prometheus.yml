@@ -9,6 +9,6 @@ global:
 scrape_configs:
   - job_name: 'flask-app'
     static_configs:
-      - targets: ['localhost:5000']
+      - targets: ['flask-app:5000']
         labels:
           app: 'my-flask-app'
